@@ -3,13 +3,13 @@ const fs=require('fs')
 const path=require('path')
 const { CLIENT_RENEG_LIMIT } = require('tls')
 let server=http.createServer((req,resp)=>{
-    if(req.url ==="/index.html"){
+    if(req.url ==="/index"){
         fs.readFile(path.join(__dirname,"web","index.html"),'utf-8',(err,data)=>{
             if(err) throw err
             resp.end(data)
     })
     }
-    if(req.url ==="/about.html"){
+    if(req.url ==="/about"){
         fs.readFile(path.join(__dirname,"web","about.html"),'utf-8',(err,data)=>{
             if(err) throw err
             resp.end(data)
